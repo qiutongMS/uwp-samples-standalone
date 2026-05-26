@@ -25,7 +25,6 @@ using Windows.Media.Capture;
 using Windows.Media.Core;
 using Windows.Media.Devices;
 using Windows.Media.MediaProperties;
-using Windows.Phone.UI.Input;
 using Windows.Storage;
 using Windows.Storage.FileProperties;
 using Windows.Storage.Streams;
@@ -273,11 +272,6 @@ namespace CameraAdvancedCapture
         }
 
         private async void PhotoButton_Click(object sender, RoutedEventArgs e)
-        {
-            await TakeAdvancedCapturePhotoAsync();
-        }
-
-        private async void HardwareButtons_CameraPressed(object sender, CameraEventArgs e)
         {
             await TakeAdvancedCapturePhotoAsync();
         }
@@ -640,12 +634,6 @@ namespace CameraAdvancedCapture
                 // Attempt to lock page to landscape orientation to prevent the CaptureElement from rotating, as this gives a better experience
                 DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
 
-                // Hide the status bar
-                if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
-                {
-                    await Windows.UI.ViewManagement.StatusBar.GetForCurrentView().HideAsync();
-                }
-
                 // Populate orientation variables with the current state
                 _displayOrientation = _displayInformation.CurrentOrientation;
                 if (_orientationSensor != null)
@@ -668,12 +656,6 @@ namespace CameraAdvancedCapture
         {
             UnregisterEventHandlers();
 
-            // Show the status bar
-            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
-            {
-                await Windows.UI.ViewManagement.StatusBar.GetForCurrentView().ShowAsync();
-            }
-
             // Revert orientation preferences
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.None;
         }
@@ -693,10 +675,6 @@ namespace CameraAdvancedCapture
         /// </summary>
         private void RegisterEventHandlers()
         {
-            if (ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
-            {
-                HardwareButtons.CameraPressed += HardwareButtons_CameraPressed;
-            }
 
             // If there is an orientation sensor present on the device, register for notifications
             if (_orientationSensor != null)
@@ -719,10 +697,6 @@ namespace CameraAdvancedCapture
         /// </summary>
         private void UnregisterEventHandlers()
         {
-            if (ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
-            {
-                HardwareButtons.CameraPressed -= HardwareButtons_CameraPressed;
-            }
 
             if (_orientationSensor != null)
             {

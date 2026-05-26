@@ -140,11 +140,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="WindowsMobile, Version=$(TargetPlatformVersion)">
-      <Name>Microsoft Mobile Extension SDK for Universal App Platform</Name>
-    </SDKReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>5.0.0</Version>
     </PackageReference>

@@ -24,7 +24,6 @@ using Windows.Media;
 using Windows.Media.Capture;
 using Windows.Media.Devices;
 using Windows.Media.MediaProperties;
-using Windows.Phone.UI.Input;
 using Windows.Storage;
 using Windows.Storage.FileProperties;
 using Windows.Storage.Streams;
@@ -226,11 +225,6 @@ namespace CameraManualControls
 
             // After starting or stopping video recording, update the UI to reflect the MediaCapture state
             UpdateCaptureControls();
-        }
-
-        private async void HardwareButtons_CameraPressed(object sender, CameraEventArgs e)
-        {
-            await TakePhotoAsync();
         }
 
         private async void PreviewControl_Tapped(object sender, TappedRoutedEventArgs e)
@@ -554,12 +548,6 @@ namespace CameraManualControls
         /// <returns></returns>
         private async Task SetupUiAsync()
         {
-            // Hide the status bar
-            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
-            {
-                await Windows.UI.ViewManagement.StatusBar.GetForCurrentView().HideAsync();
-            }
-
             // Populate orientation variables with the current state
             _displayOrientation = _displayInformation.CurrentOrientation;
             if (_orientationSensor != null)
@@ -620,10 +608,6 @@ namespace CameraManualControls
         /// </summary>
         private void RegisterEventHandlers()
         {
-            if (ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
-            {
-                HardwareButtons.CameraPressed += HardwareButtons_CameraPressed;
-            }
 
             // If there is an orientation sensor present on the device, register for notifications
             if (_orientationSensor != null)
@@ -656,10 +640,6 @@ namespace CameraManualControls
         /// </summary>
         private void UnregisterEventHandlers()
         {
-            if (ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
-            {
-                HardwareButtons.CameraPressed -= HardwareButtons_CameraPressed;
-            }
 
             if (_orientationSensor != null)
             {

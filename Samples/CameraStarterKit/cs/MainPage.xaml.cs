@@ -22,7 +22,6 @@ using Windows.Graphics.Imaging;
 using Windows.Media;
 using Windows.Media.Capture;
 using Windows.Media.MediaProperties;
-using Windows.Phone.UI.Input;
 using Windows.Storage;
 using Windows.Storage.FileProperties;
 using Windows.Storage.Streams;
@@ -176,11 +175,6 @@ namespace CameraStarterKit
 
             // After starting or stopping video recording, update the UI to reflect the MediaCapture state
             UpdateCaptureControls();
-        }
-
-        private async void HardwareButtons_CameraPressed(object sender, CameraEventArgs e)
-        {
-            await TakePhotoAsync();
         }
 
         private async void MediaCapture_RecordLimitationExceeded(MediaCapture sender)
@@ -542,12 +536,6 @@ namespace CameraStarterKit
             // Attempt to lock page to landscape orientation to prevent the CaptureElement from rotating, as this gives a better experience
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
 
-            // Hide the status bar
-            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
-            {
-                await Windows.UI.ViewManagement.StatusBar.GetForCurrentView().HideAsync();
-            }
-
             RegisterEventHandlers();
             var picturesLibrary = await StorageLibrary.GetLibraryAsync(KnownLibraryId.Pictures);
             // Fall back to the local app storage if the Pictures Library is not available
@@ -561,12 +549,6 @@ namespace CameraStarterKit
         private async Task CleanupUiAsync()
         {
             UnregisterEventHandlers();
-
-            // Show the status bar
-            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
-            {
-                await Windows.UI.ViewManagement.StatusBar.GetForCurrentView().ShowAsync();
-            }
 
             // Revert orientation preferences
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.None;
@@ -600,10 +582,6 @@ namespace CameraStarterKit
         /// </summary>
         private void RegisterEventHandlers()
         {
-            if (ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
-            {
-                HardwareButtons.CameraPressed += HardwareButtons_CameraPressed;
-            }
             _systemMediaControls.PropertyChanged += SystemMediaControls_PropertyChanged;
         }
 
@@ -612,10 +590,6 @@ namespace CameraStarterKit
         /// </summary>
         private void UnregisterEventHandlers()
         {
-            if (ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))
-            {
-                HardwareButtons.CameraPressed -= HardwareButtons_CameraPressed;
-            }
             _systemMediaControls.PropertyChanged -= SystemMediaControls_PropertyChanged;
         }
 

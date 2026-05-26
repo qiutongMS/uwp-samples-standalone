@@ -657,12 +657,6 @@ namespace CameraVideoStabilization
             // Attempt to lock page to landscape orientation to prevent the CaptureElement from rotating, as this gives a better experience
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
 
-            // Hide the status bar
-            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
-            {
-                await Windows.UI.ViewManagement.StatusBar.GetForCurrentView().HideAsync();
-            }
-
             // Populate orientation variables with the current state
             _displayOrientation = _displayInformation.CurrentOrientation;
             if (_orientationSensor != null)
@@ -685,12 +679,6 @@ namespace CameraVideoStabilization
         {
             UnregisterEventHandlers();
             
-            // Show the status bar
-            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
-            {
-                await Windows.UI.ViewManagement.StatusBar.GetForCurrentView().ShowAsync();
-            }
-
             // Revert orientation preferences
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.None;
         }
