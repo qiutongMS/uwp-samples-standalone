@@ -34,7 +34,7 @@
       <uap:VisualElements
         DisplayName="OneHandedUse_TailoredMultipleViews CS Sample"
         Square150x150Logo="Assets\SquareTile-sdk.png"
-        Square44x44Logo="Assets\smalltile_sdk.png"
+        Square44x44Logo="Assets\smalltile-sdk.png"
         Description="OneHandedUse_TailoredMultipleViews"
         BackgroundColor="#00b2f0">
         <uap:SplashScreen Image="Assets\splash-sdk.png" />

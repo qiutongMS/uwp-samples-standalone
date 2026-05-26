@@ -21,11 +21,6 @@ namespace SDKTemplate
 
         List<Scenario> scenarios = new List<Scenario>
         {
-            new Scenario() { Title = "Files", ClassType = typeof(Scenario1_Files) },
-            new Scenario() { Title = "Settings", ClassType = typeof(Scenario2_Settings) },
-            new Scenario() { Title = "Setting Containers", ClassType = typeof(Scenario3_SettingContainer) },
-            new Scenario() { Title = "Composite Settings", ClassType = typeof(Scenario4_CompositeSettings) },
-            new Scenario() { Title = "ms-appdata:// Protocol", ClassType = typeof(Scenario5_Msappdata) },
             new Scenario() { Title = "Clear", ClassType = typeof(Scenario6_ClearScenario) },
             new Scenario() { Title = "SetVersion", ClassType = typeof(Scenario7_SetVersion) },
         };

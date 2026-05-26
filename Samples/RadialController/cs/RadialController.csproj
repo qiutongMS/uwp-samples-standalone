@@ -179,9 +179,6 @@
     <Content Include="..\shared\Item3.png">
       <Link>Assets\Item3.png</Link>
     </Content>
-    <Content Include="$(SharedContentDir)\js\Microsoft.WinJS\fonts\Symbols.ttf">
-      <Link>Assets\Symbols.ttf</Link>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
