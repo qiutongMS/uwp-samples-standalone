@@ -1,0 +1,1 @@
+E:\githubProject\uwp-samples-standalone\Samples\CameraStarterKit\cs\AppPackages\CameraStarterKit_1.0.0.0_x64_Debug_Test\CameraStarterKit_1.0.0.0_x64_Debug.msix

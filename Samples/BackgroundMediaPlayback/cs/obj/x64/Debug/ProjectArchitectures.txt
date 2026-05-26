@@ -1,0 +1,1 @@
+E:\githubProject\uwp-samples-standalone\Samples\BackgroundMediaPlayback\cs\BackgroundMediaPlayback.csproj;x64

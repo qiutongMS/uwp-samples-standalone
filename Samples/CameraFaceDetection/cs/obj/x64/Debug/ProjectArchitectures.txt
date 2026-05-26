@@ -1,0 +1,1 @@
+E:\githubProject\uwp-samples-standalone\Samples\CameraFaceDetection\cs\CameraFaceDetection.csproj;x64

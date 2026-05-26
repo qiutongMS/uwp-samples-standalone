@@ -1,0 +1,1 @@
+E:\githubProject\uwp-samples-standalone\Samples\CameraFaceDetection\cs\AppPackages\CameraFaceDetection_1.0.0.0_x64_Debug_Test\CameraFaceDetection_1.0.0.0_x64_Debug.msix
