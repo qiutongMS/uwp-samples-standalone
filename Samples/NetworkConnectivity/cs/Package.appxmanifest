@@ -16,8 +16,7 @@
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="NetworkConnectivity.App">
       <uap:VisualElements DisplayName="NetworkConnectivity C# Sample" Square150x150Logo="Assets\SquareTile-sdk.png" Square44x44Logo="Assets\SmallTile-sdk.png" Description="NetworkConnectivity C# Sample" BackgroundColor="#00b2f0">
-        <uap:SplashScreen Image="Assets\Splash-sdk.png" />
-        <uap:LockScreen Notification="badge" BadgeLogo="Assets\smalltile-sdk.png" />
+        <uap:SplashScreen Image="Assets\Splash-sdk.png" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" />
         <uap:DefaultTile/>
       </uap:VisualElements>
       <Extensions>

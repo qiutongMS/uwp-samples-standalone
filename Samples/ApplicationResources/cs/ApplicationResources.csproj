@@ -347,6 +347,12 @@
     <Content Include="$(SharedContentDir)\media\smalltile-sdk.png">
       <Link>Images\smalllogo.scale-100.png</Link>
     </Content>
+    <Content Include="$(SharedContentDir)\media\smalltile-sdk.png">
+      <Link>Assets\SmallTile-sdk.png</Link>
+    </Content>
+    <Content Include="$(SharedContentDir)\media\squaretile-sdk.png">
+      <Link>Assets\SquareTile-sdk.png</Link>
+    </Content>
     <Content Include="..\shared\images\smalllogo.scale-140.png">
       <Link>Images\smalllogo.scale-140.png</Link>
     </Content>
