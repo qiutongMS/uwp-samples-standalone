@@ -204,6 +204,9 @@
     <Content Include="$(SharedContentDir)\media\windows-sdk.png">
       <Link>Assets\windows-sdk.png</Link>
     </Content>
+    <Content Include="$(SharedContentDir)\media\badge-logo.png">
+      <Link>Assets\badge-logo.png</Link>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tasks\Tasks.csproj">
