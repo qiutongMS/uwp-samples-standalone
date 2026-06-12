@@ -1,0 +1,1 @@
+E:\githubProject\uwp-samples-standalone\Samples\CameraVideoStabilization\cs\AppPackages\CameraVideoStabilization_1.0.0.0_x64_Debug_Test\CameraVideoStabilization_1.0.0.0_x64_Debug.msix

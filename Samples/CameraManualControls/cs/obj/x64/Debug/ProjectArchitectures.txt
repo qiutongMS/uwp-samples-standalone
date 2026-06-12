@@ -1,0 +1,1 @@
+E:\githubProject\uwp-samples-standalone\Samples\CameraManualControls\cs\CameraManualControls.csproj;x64

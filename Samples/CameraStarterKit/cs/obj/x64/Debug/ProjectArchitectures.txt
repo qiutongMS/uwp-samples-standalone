@@ -1,0 +1,1 @@
+E:\githubProject\uwp-samples-standalone\Samples\CameraStarterKit\cs\CameraStarterKit.csproj;x64

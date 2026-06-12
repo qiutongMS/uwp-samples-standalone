@@ -1,0 +1,1 @@
+E:\githubProject\uwp-samples-standalone\Samples\CameraAdvancedCapture\cs\AppPackages\CameraAdvancedCapture_1.0.0.0_x64_Debug_Test\CameraAdvancedCapture_1.0.0.0_x64_Debug.msix
